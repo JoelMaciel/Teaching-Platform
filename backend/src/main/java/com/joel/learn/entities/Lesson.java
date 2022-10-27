@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-@Table(name = "tb_lessons")
+@Table(name = "tb_lesson")
 public abstract class Lesson implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
