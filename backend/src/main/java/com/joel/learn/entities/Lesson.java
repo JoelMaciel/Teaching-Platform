@@ -1,7 +1,9 @@
 package com.joel.learn.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -14,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
@@ -36,6 +39,9 @@ public abstract class Lesson implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "section_id")
 	private Section section;
+	
+	@OneToMany(mappedBy = "lesson")
+	private List<Deliver> delivers = new ArrayList<>();
 	
 	@ManyToMany
 	@JoinTable(name = "tb_lessons_done",
